@@ -1,0 +1,72 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<form class="form-horizontal">
+    <div class="container">
+        <br>
+        <br>
+        <div align="center" class="form-group">
+            <label class="control-label col-sm-4" align="left" style="font-family:verdana;" for="verfId"> Verification
+                ID</label>
+            <div class="col-sm-4">
+                <input type="text" pattern=[0-9]* minlength="3" maxlength="5" name="verfId" [(ngModel)]="verfId"
+                    placeholder="Enter verification ID" #verid="ngModel" class="form-control" required />
+
+                <div class="alert alert-danger" *ngIf="verid.errors && (verid.dirty||verid.touched)">
+                    <div *ngIf="verid.errors.required">Field cannot be empty</div>
+
+                    <div [hidden]="!verid.errors.pattern">
+                        No characters are allowed
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <br>
+        <div align="center" class="form-group">
+            <button type="submit" value="fetch" class="btn btn-success" (click)="status()">Submit</button>
+      
+       <!-- </div>
+        <br>
+        <div align="center" class="form-group">
+            <div *ngIf="check1" align="center">
+                <h3>Status : <span style="color: rgb(206, 82, 82);" class="class">{{message}}</span></h3>
+                StartDate:<span>{{message1}}</span>
+                endDate:<span>{{message2}}</span>
+            </div>
+            -->
+        </div>
+        
+        <div *ngIf="check1">
+        <table class="table" border="1">
+            <thead>
+              <tr>
+                <th>verfId</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color: crimson;">{{verification_details.verfId}}</td>
+                <td>{{message1}}</td>
+                <td>{{message2}}</td>
+                <td style="color: crimson;">{{message}}</td>
+              </tr>
+                  </tbody>
+          </table>
+        </div>
+
+        <div align="center" *ngIf="check" class="form-group">
+            <h3>{{result}}</h3>
+        </div>
+    </div>
+    <div align="center" class="form-group text-danger">
+        <h3>{{message}}</h3>
+        </div>
+</form>

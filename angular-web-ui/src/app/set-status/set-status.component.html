@@ -1,0 +1,61 @@
+<body>
+  <form class="form-horizontal">
+    <div class="container">
+      <br>
+      <br>
+
+      <div align="center" class="form-group">
+
+        <label class="control-label col-sm-4" align="left" style="font-family:verdana;" for="uname">verfId:</label>
+        <div class="col-sm-4">
+          <input type="text" pattern=[0-9]* minlength="2" maxlength="5" name="empId" [(ngModel)]="verification.verfId"
+            #verfIdRef='ngModel' class="form-group" class="form-control" placeholder="Enter Verification ID" required>
+          <div *ngIf='verfIdRef.errors && verfIdRef.touched' class="alert alert-danger">
+            <div [hidden]='!verfIdRef.errors.required'> Please provide Verification ID</div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div align="center" class="form-group">
+        <label class="control-label col-sm-4" align="left" style="font-family:verdana;" for="pwd">Status:</label>
+        <div class="col-sm-4">
+          <input type="text" pattern=[0-9]* minlength="5" maxlength="8" name="status" 
+            [(ngModel)]="verification.status" #statusval='ngModel' class="form-control" placeholder="set the status"
+            required /><br><br>
+          <div *ngIf='statusval.errors && statusval.touched' class="alert alert-danger">
+            <div [hidden]='!statusval.errors.required'>Please provide the status </div>
+          </div>
+        </div>
+      </div>
+  
+      
+      <div align="center" class="form-group">
+        <button type="submit" class="btn btn-success" (click)="status()">Submit</button>
+      </div>
+
+      <div *ngIf="check1">
+        <table class="table" border="1">
+            <thead>
+              <tr>
+                <th>verfId</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color: green;">{{verification.verfId}}</td>
+                <td style="color: green;">{{ verification.status }}</td>
+              </tr>
+                  </tbody>
+          </table>
+        </div>
+
+      <div align="center" class="form-group text-danger">
+        <h4 align="center">{{errorMsg}}</h4>
+      </div>
+    </div>
+  </form>
+
+
+</body>

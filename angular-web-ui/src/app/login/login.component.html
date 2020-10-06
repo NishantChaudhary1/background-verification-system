@@ -1,0 +1,81 @@
+<html>
+
+<head>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="http://localhost:4200">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=poppins&amp;display=swap">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+<body>
+  <div class="main">
+    <div class="left-side">
+      <a>
+        <img src="assets/img/bgv1.png" a/>
+      </a>
+    </div>
+    <div class="right-side">
+      <hr>
+      <hr>
+      <br>
+      <h2>Sign in</h2>
+      
+      
+        <div class="input-container">
+          <i class="fa fa-user"></i>
+          <input type="text" pattern=[0-9]* minlength="5" maxlength="5" name="empId" id="empId" [(ngModel)]="userId"
+          placeholder="Enter User Id" #usereid="ngModel" autocomplete="off" required>
+    
+        <div class="alert alert-light" *ngIf="usereid.errors && (usereid.dirty||usereid.touched)">
+          <div *ngIf="usereid.errors.required">Field cannot be empty</div>
+          <div *ngIf="usereid.errors.minlength">Id should be 5 digits</div>
+
+          <div [hidden]="!usereid.errors.pattern">
+            No characters are allowed
+          </div>
+        </div>
+</div>
+  
+      
+      
+     
+      
+        <div class="input-container">
+          <i class="fa fa-key icon"></i>
+        <input type="password" name="password" id="emppassword" [(ngModel)]="password" placeholder="Enter Password" minlength="6"
+          maxlength="10" #pass="ngModel" required>
+        <div class="alert alert-light" *ngIf="pass.errors && (pass.dirty||pass.touched)">
+          <div *ngIf="pass.errors.required">Field cannot be empty</div>
+          <div *ngIf="pass.errors.minlength">Password should be 6 characters</div>
+
+        </div>
+      
+      </div>
+      
+        <div class="wrapper">
+          <i class="fa fa-user"></i>
+        <input type="text" pattern=[0-9]* minlength="5" maxlength="5" name="roleid" id="roleid" [(ngModel)]="roleId"
+          placeholder="Enter Role-Id" #roleeid="ngModel" required>
+        <div class="alert alert-light" *ngIf="roleeid.errors && (roleeid.dirty||roleeid.touched)">
+          <div *ngIf="roleeid.errors.required">Field cannot be empty</div>
+          <div *ngIf="roleeid.errors.minlength">Id should be 5 digits</div>
+
+          <div [hidden]="!roleeid.errors.pattern">
+            No characters are allowed
+          </div>
+        
+</div>
+      </div>
+      <div>
+        <button (click)="fetchEmployee()" class="btn btn-success" id="successloginbtn" type="submit">Sign in</button>
+      </div>
+      <h5 align="center">{{msg}}</h5>
+    </div>
+  </div>
+  
+  
+
+</body>
+
+</html>

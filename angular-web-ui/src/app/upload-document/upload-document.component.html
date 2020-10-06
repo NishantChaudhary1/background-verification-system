@@ -1,0 +1,68 @@
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <form class="form-horizontal" [formGroup]="reactiveForm">
+    <div class="container">
+      <br>
+      <br>
+      <div class="form-group" align="center">
+
+        <label class="control-label col-sm-4" align="left" for="ID">Employee ID</label>
+        <div class="col-sm-4">
+          <input type="text" pattern=[0-9]*  class="form-control" id="empId"
+            formControlName="empId" required>
+         <!-- <div class="alert alert-danger"
+            *ngIf="reactiveForm.controls.empId.errors && (reactiveForm.controls.empId.touched || reactiveForm.controls.empId.dirty)">
+            <div *ngIf="reactiveForm.hasError('required,'empId')">
+              id is required
+            </div>
+
+          </div> -->
+
+        </div>
+      </div>
+      <div align="center">
+        <label class="control-label col-sm-4" align="left" for="Name">Employee Name</label>
+        <div class="col-sm-4">
+          <input type="text" pattern=[a-z]*  class="form-control" name="name"
+            formControlName="empName" required>
+
+          <!--<div class="alert alert-danger"
+            *ngIf="reactiveForm.controls.empName.errors && (reactiveForm.controls.empName.touched || reactiveForm.controls.empName.dirty)">
+            <div *ngIf="reactiveForm.hasError('required,'empName')">
+              Name is required
+            </div>
+
+          </div>-->
+        </div>
+
+      </div>
+      <br>
+
+      <div align="center">
+        <label class="control-label col-sm-4" align="left" for="file">File Upload</label>
+        <div class="col-sm-4">
+          <input type="file" class="form-control" accept="image/*"  (change)="onSelectFile($event)">
+        </div>
+      </div>
+      <br>
+      <div align="center">
+
+        <button type="submit" class="btn btn-success" (click)="saveForm(reactiveForm)">Submit</button>
+      </div>
+    </div>
+  </form>
+  <br>
+  <h5 align="center" style="color: rgb(231, 38, 38);">{{message}}</h5>
+
+</body>
+
+</html>
