@@ -36,6 +36,7 @@
   - Angular CLI
   - Bootstrap
   
+  
  ## Database Schema
  ![](https://github.com/NishantChaudhary1/background-verification-system/blob/main/images/ER_BGV_FINALIZED.PNG)
   
