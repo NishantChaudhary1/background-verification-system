@@ -40,7 +40,10 @@
  ![](https://github.com/NishantChaudhary1/background-verification-system/blob/main/images/ER_BGV_FINALIZED.PNG)
   
  ## Screenshots
+ #### Swagger
  ![Swagger](https://github.com/NishantChaudhary1/background-verification-system/blob/main/images/swagger-ui.png)
- ![Upload Documents](https://github.com/NishantChaudhary1/background-verification-system/blob/main/images/eureka-server.png)
+ #### Eureka Server
+ ![Eureka Server](https://github.com/NishantChaudhary1/background-verification-system/blob/main/images/eureka-server.png)
+ #### Upload Docs 
  ![Upload Documents](https://github.com/NishantChaudhary1/background-verification-system/blob/main/images/uploadDocument-ui.png)
  
